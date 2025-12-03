@@ -1,15 +1,6 @@
+'use client'
 
-type Employee = {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-  isAccountNonExistent: string;
-  isAccountNonLocked: string;
-  isCredentialsNonExpired: string;
-  isEnabled: string;
-  roles: string
-};
+import { Employee } from "@/app/_types/employee"
 
 const columns = [
   { key: "id", label: "ID" },
@@ -17,7 +8,8 @@ const columns = [
   { key: "lastName", label: "Efternamn" },
   { key: "email", label: "Email" },
   { key: "roles", label: "Roll" },
-  { key: "isAccountNonExistent", label: "NonExistent" },
+  { key: "isAccountNonExistent",
+	 label: "NonExistent"
   { key: "isAccountNonLocked", label: "NonLocked" },
   { key: "isCredentialsNonExpired", label: "NonExpired" },
   { key: "isEnabled", label: "Enabled" },
