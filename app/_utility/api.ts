@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation"
 
+
 export async function apiFetch<T>(
   url: string,
   options: RequestInit = {},
@@ -29,8 +30,12 @@ export async function apiFetch<T>(
   if (res.status === 401 || res.status === 403) {
     console.warn("Session expired. Redirecting to login…")
     
-    
-    router?.push("/login") 
+    //TODO  resuts import { NextResponse } from "next/server" ANSWER det verkar som next response inte fungerar
+     if (router) {
+    router.replace("/login");
+  } else {
+    window.location.href = "/login"; 
+  }
     
     return null
   }

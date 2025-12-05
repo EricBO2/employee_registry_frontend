@@ -20,7 +20,12 @@ export default function Page() {
   
   const load = async () => {
     console.log("Load function running...");
-    const data = await apiFetch<Employee[]>("http://localhost:8080/get-all")
+    const data = await apiFetch<Employee[]>("http://localhost:8080/api/get-all", {
+    method: "GET",
+    credentials: "include"
+}
+      
+    )
     if (!data) return
     
     

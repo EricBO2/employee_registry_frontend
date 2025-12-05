@@ -20,23 +20,51 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
-    <html lang="en">
-      
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-      <section className="h-screen felx flex-col">
-        <nav className="flex justify-center p-4">
-          <h1>EMPOLYEE REGISTRY</h1>
-          <Link href="login">Login</Link>
-        </nav>
-        
+<html lang="en">
+  <body
+    className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+  >
+    <section className="min-h-screen flex flex-col">
+
+      {/* HEADER */}
+      <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-foreground/10">
+        <div className="max-w-5xl mx-auto flex items-center justify-between py-4 px-6">
+
+          {/* Logo / Title */}
+          <Link
+            href="/"
+            className="text-lg font-semibold tracking-wide hover:text-blue-500 transition-colors"
+          >
+            EMPLOYEE REGISTRY
+          </Link>
+
+          {/* Navigation Links */}
+          <div className="flex gap-6 text-sm">
+            <Link
+              href="/login"
+              className="hover:text-blue-500 transition-colors"
+            >
+              Login
+            </Link>
+
+            <Link
+              href="/logout"
+              className="hover:text-red-500 transition-colors"
+            >
+              Logout
+            </Link>
+          </div>
+
+        </div>
+      </nav>
+
+      {/* PAGE CONTENT */}
+      <main className="flex-1">
         {children}
-        
-        
-        </section>
-      </body>
-      
-    </html>
+      </main>
+
+    </section>
+  </body>
+</html>
   );
 }

@@ -6,13 +6,13 @@ export async function GET(request: Request) {
     const newEmployee: Employee = {
         id: 0,
         firstName: "hej",
-        lastName: "hje",
+        lastName: "hej",
         email: "hej",
-        isAccountNonExistent: "hej",
-        isAccountNonLocked: "hej",
-        isCredentialsNonExpired: "hej",
-        isEnabled: "hej",
-        roles: "hej"
+        accountNonExistent: true,
+        accountNonLocked: true,
+        credentialsNonExpired: true,
+        enabled: true,
+        roles: ["hej"]
     }
 
     return NextResponse.json(newEmployee)
